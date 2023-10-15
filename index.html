@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Book</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Bootstrap Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Contact Book</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <div class="input-group search-box">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="button"><i class="ion-search"></i></button>
+                        </span>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+            <!-- <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul> -->
+        </div>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" id="addContactBtn" href="#">Add Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+    <!-- Content Area -->
+
+    <!-- navigation buttons -->
+
+
+
+
+    <!-- col-md-12 -->
+    <div class="btn-toolbar mb-3 row --bs-light-bg-subtle d-flex justify-content-center" role="toolbar"
+        aria-label="Toolbar with button groups">
+        <div class="btn-group d-flex flex-wrap my-auto col-md-10 " role="group" aria-label="First group">
+            <a class="btn btn-outline-secondary" href="#scrollspyHeading5">A</a>
+            <a class="btn btn-outline-secondary">B</a>
+            <a class="btn btn-outline-secondary">C</a>
+            <a class="btn btn-outline-secondary">D</a>
+            <a class="btn btn-outline-secondary">E</a>
+            <a class="btn btn-outline-secondary">F</a>
+            <a class="btn btn-outline-secondary">G</a>
+            <a class="btn btn-outline-secondary">H</a>
+            <a class="btn btn-outline-secondary">I</a>
+            <a class="btn btn-outline-secondary">J</a>
+            <a class="btn btn-outline-secondary">K</a>
+            <a class="btn btn-outline-secondary">L</a>
+            <a class="btn btn-outline-secondary">M</a>
+            <a class="btn btn-outline-secondary">N</a>
+            <a class="btn btn-outline-secondary">O</a>
+            <a class="btn btn-outline-secondary">P</a>
+            <a class="btn btn-outline-secondary">Q</a>
+            <a class="btn btn-outline-secondary">R</a>
+            <a class="btn btn-outline-secondary">S</a>
+            <a class="btn btn-outline-secondary">T</a>
+            <a class="btn btn-outline-secondary">U</a>
+            <a class="btn btn-outline-secondary">V</a>
+            <a class="btn btn-outline-secondary">W</a>
+            <a class="btn btn-outline-secondary">X</a>
+            <a class="btn btn-outline-secondary">Y</a>
+            <a class="btn btn-outline-secondary">Z</a>
+            <a class="btn btn-outline-secondary">0-9</a>
+            <a class="btn btn-outline-secondary">#</a>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 row">
+
+    </nav>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+        <h4 id="scrollspyHeading1">First heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading2">Second heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading3">Third heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading4">Fourth heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading5">Fifth heading</h4>
+        <p>...</p>
+    </div>
+
+    <!-- navigation buttons end -->
+    <!-- <div class="container"> -->
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card mb-4 border-0">
+                    <div class="card-header" data-toggle="collapse" data-target="#contactDetails1">
+                        <h5 class="card-title">John Doe</h5>
+                    </div>
+                    <div id="contactDetails1" class="collapse">
+                        <div class="card-body">
+                            <p class="card-text">Email: john.doe@example.com</p>
+                            <p class="card-text">Phone: (123) 456-7890</p>
+                            <p class="card-text">Address: 123 Main St, City, State</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+
+            <!-- Add more contact cards as needed -->
+
+        </div>
+    </div>
+</body>
+
+</html>
+In the corrected code, I've included the necessary Bootstrap CSS and JavaScript libraries, including jQuery and
+Popper.js, to enable the collapse functionality. Ensure that you include these dependencies in your HTML file to make
+the details show on click.
+
+If you still encounter issues, double-check that there are no JavaScript errors or conflicts in your project that may be
+preventing the Bootstrap JavaScript from functioning correctly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title" data-bs-toggle="collapse" href="#contactDetails1" aria-expanded="false">
+                        John Doe
+                    </h5>
+                </div>
+                <div class="collapse" id="contactDetails1">
+                    <div class="card-body">
+                        <p class="card-text">Email: john.doe@example.com</p>
+                        <p class="card-text">Phone: (123) 456-7890</p>
+                        <p class="card-text">Address: 123 Main St, City, State</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more contact cards as needed -->
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Include Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Your JavaScript code here -->
+</body>
+
+</html>
