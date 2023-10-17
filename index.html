@@ -5,8 +5,11 @@
     <title>Contact Book</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,12 +17,12 @@
 
     <!-- Bootstrap Navbar -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Contact Book</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand mx-3" href="#">Contact Book</a>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
@@ -115,114 +118,99 @@
     </div>
 
 
-
-
-
-
-
-
-
-    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 row">
-
-    </nav>
-    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-        data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-        <h4 id="scrollspyHeading1">First heading</h4>
-        <p>...</p>
-        <h4 id="scrollspyHeading2">Second heading</h4>
-        <p>...</p>
-        <h4 id="scrollspyHeading3">Third heading</h4>
-        <p>...</p>
-        <h4 id="scrollspyHeading4">Fourth heading</h4>
-        <p>...</p>
-        <h4 id="scrollspyHeading5">Fifth heading</h4>
-        <p>...</p>
-    </div>
-
     <!-- navigation buttons end -->
     <!-- <div class="container"> -->
-        <div class="row">
-            <div class="col-md-10">
-                <div class="card mb-4 border-0">
-                    <div class="card-header" data-toggle="collapse" data-target="#contactDetails1">
-                        <h5 class="card-title">John Doe</h5>
-                    </div>
-                    <div id="contactDetails1" class="collapse">
-                        <div class="card-body">
-                            <p class="card-text">Email: john.doe@example.com</p>
-                            <p class="card-text">Phone: (123) 456-7890</p>
-                            <p class="card-text">Address: 123 Main St, City, State</p>
-                        </div>
-                    </div>
-                </div>
-            <!-- </div> -->
-
-            <!-- Add more contact cards as needed -->
-
-        </div>
-    </div>
-</body>
-
-</html>
-In the corrected code, I've included the necessary Bootstrap CSS and JavaScript libraries, including jQuery and
-Popper.js, to enable the collapse functionality. Ensure that you include these dependencies in your HTML file to make
-the details show on click.
-
-If you still encounter issues, double-check that there are no JavaScript errors or conflicts in your project that may be
-preventing the Bootstrap JavaScript from functioning correctly.
 
 
+    <!-- contacts -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h5 class="card-title" data-bs-toggle="collapse" href="#contactDetails1" aria-expanded="false">
-                        John Doe
-                    </h5>
+        <div class="col-md-12">
+            <!-- start -->
+
+            <div class="card-header bg-white m-0 py-0" data-toggle="collapse" data-target="#contactDetails1">
+                <h3 class="card-title my-0 ">J </h3>
+            </div>
+
+
+
+            <!-- end -->
+
+            <div class="card mb-0 border-0">
+                <div class="card-header bg-white px-5" data-toggle="collapse" data-target="#contactDetails0">
+                    <h5 class="card-title my-0">John Doe</h5>
+                    
                 </div>
-                <div class="collapse" id="contactDetails1">
-                    <div class="card-body">
+                <div id="contactDetails0" class="collapse px-5">
+                    <div class="card-body py-0">
                         <p class="card-text">Email: john.doe@example.com</p>
                         <p class="card-text">Phone: (123) 456-7890</p>
                         <p class="card-text">Address: 123 Main St, City, State</p>
                     </div>
+                    <div class="ml-auto mt-2 mx-0 px-5">
+                        <!-- Edit Icon -->
+                        <a href="#" class=" btn btn-outline-primary text-primary mx-2 py-0">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <!-- Delete Icon -->
+                        <a href="#" class="btn btn-outline-danger text-danger mx-5 py-0">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+
+
+
+            <div class="card mb-0 border-0">
+                <div class="card-header bg-white px-5" data-toggle="collapse" data-target="#contactDetails1">
+                    <h5 class="card-title my-0">John Doe</h5>
+                    
+                </div>
+                <div id="contactDetails1" class="collapse px-5">
+                    <div class="card-body py-0">
+                        <p class="card-text">Email: john.doe@example.com</p>
+                        <p class="card-text">Phone: (123) 456-7890</p>
+                        <p class="card-text">Address: 123 Main St, City, State</p>
+                    </div>
+                    <div class="ml-auto mt-2 mx-0 px-5">
+                        <!-- Edit Icon -->
+                        <a href="#" class=" btn btn-outline-primary text-primary mx-2 py-0">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <!-- Delete Icon -->
+                        <a href="#" class="btn btn-outline-danger text-danger mx-5 py-0">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Add more contact cards as needed -->
+
+
         </div>
-
-        <!-- Add more contact cards as needed -->
-
     </div>
-</div>
+
+
+
+
+    
+    
+    
 
 
 
 
 
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-<!-- Include Bootstrap JS and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- Your JavaScript code here -->
+    <!-- Your JavaScript code here -->
 </body>
 
 </html>
