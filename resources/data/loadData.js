@@ -1,4 +1,3 @@
-const contacts = document.getElementById("contacts");
 
 
 const sortedData = [
@@ -395,6 +394,8 @@ const sortedData = [
 
 ];
 
+localStorage.setItem("data",JSON.stringify(sortedData));
+
 // const sortedData = data.sort((a, b) => {
 //     const nameA = a.name.toLowerCase();
 //     const nameB = b.name.toLowerCase();
@@ -410,49 +411,3 @@ const sortedData = [
 
 // console.log(sortedData);
 // localStorage.setItem("data", JSON.stringify(sortedData));
-
-let createContact = function (data, id) {
-    return `<div class="card mb-0 border-0">
-    <div class="card-header bg-white px-5" data-toggle="collapse" data-target="#contactDetails${id}">
-        <h5 class="card-title my-0">${data.name}</h5>
-        
-    </div>
-    <div id="contactDetails${id}" class="collapse px-5">
-        <div class="card-body py-0">
-            <p class="card-text">Email: ${data.email}</p>
-            <p class="card-text">Phone: ${data.phone}</p>
-            <p class="card-text">Address: ${data.address}</p>
-        </div>
-        <div class="ml-auto mt-2 mx-0 px-5">
-            <!-- Edit Icon -->
-            <a href="#" class=" btn btn-outline-primary text-primary mx-2 py-0">
-                <i class="fas fa-pencil-alt"></i>
-            </a>
-            <!-- Delete Icon -->
-            <a href="#"  id="del${id}"onclick="deleteContact(this)" class="btn btn-outline-danger text-danger mx-5 py-0">
-                <i class="fas fa-trash-alt"></i>
-            </a>
-        </div>
-    </div>
-</div>`;
-};
-
-let renderData = function (data) {
-    let Data = data.map((val, index) => {
-        return createContact(val, index);
-    });
-    let renderData = "";
-    Data.forEach((element) => {
-        renderData = renderData + element;
-    });
-
-    return renderData;
-};
-
-let deleteContact = function(e)
-{
-    e.parentElement.parentElement.parentElement.remove();
-    // console.log(e.parentElement.parentElement.parentElement);
-}
-
-contacts.innerHTML = renderData(sortedData);
