@@ -47,7 +47,7 @@ let renderData = function (data) {
             console.log("data name: " + data[index].name);
             currentChar = getfirstchar(data[index].name);
             renderData += `
-            <div class="card-header bg-white m-0 py-0">
+            <div class="card-header bg-white m-0 py-0" id="header${currentChar}>
             <h3 class="card-title my-0 ">${currentChar} </h3>
             </div>
             `;
@@ -56,7 +56,7 @@ let renderData = function (data) {
             if (currentChar != "0-9") {
                 currentChar = "0-9";
                 renderData += `
-                <div class="card-header bg-white m-0 py-0">
+                <div class="card-header bg-white m-0 py-0" id="header${currentChar}>
                 <h3 class="card-title my-0 ">${currentChar} </h3>
                 </div>
             `;
@@ -66,7 +66,7 @@ let renderData = function (data) {
         else if (getfirstchar(data[index].name) != currentChar) {
             currentChar = getfirstchar(data[index].name);
             renderData += `
-            <div class="card-header bg-white m-0 py-0">
+            <div class="card-header bg-white m-0 py-0" id="header${currentChar}">
             <h3 class="card-title my-0 ">${currentChar} </h3>
             </div>
             `;

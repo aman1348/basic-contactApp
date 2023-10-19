@@ -6,7 +6,7 @@
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    
+
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
@@ -19,10 +19,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand mx-3" href="#">Contact Book</a>
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mx-3" href="#">Contact Book</a>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
@@ -84,16 +84,16 @@
     <div class="btn-toolbar mb-3 row --bs-light-bg-subtle d-flex justify-content-center" role="toolbar"
         aria-label="Toolbar with button groups">
         <div class="btn-group d-flex flex-wrap my-auto col-md-10 " role="group" aria-label="First group">
-            <a class="btn btn-outline-secondary" href="#scrollspyHeading5">A</a>
-            <a class="btn btn-outline-secondary">B</a>
-            <a class="btn btn-outline-secondary">C</a>
-            <a class="btn btn-outline-secondary">D</a>
+            <a class="btn btn-outline-secondary" href="#headerA">A</a>
+            <a class="btn btn-outline-secondary" href="#headerB">B</a>
+            <a class="btn btn-outline-secondary" href="#headerC">C</a>
+            <a class="btn btn-outline-secondary" href="#headerD">D</a>
             <a class="btn btn-outline-secondary">E</a>
             <a class="btn btn-outline-secondary">F</a>
             <a class="btn btn-outline-secondary">G</a>
             <a class="btn btn-outline-secondary">H</a>
             <a class="btn btn-outline-secondary">I</a>
-            <a class="btn btn-outline-secondary">J</a>
+            <a class="btn btn-outline-secondary" href="#headerJ">J</a>
             <a class="btn btn-outline-secondary">K</a>
             <a class="btn btn-outline-secondary">L</a>
             <a class="btn btn-outline-secondary">M</a>
@@ -140,7 +140,7 @@
             <div class="card mb-0 border-0">
                 <div class="card-header bg-white px-5" data-toggle="collapse" data-target="#contactDetails0">
                     <h5 class="card-title my-0">John Doe</h5>
-                    
+
                 </div>
                 <div id="contactDetails0" class="collapse px-5">
                     <div class="card-body py-0">
@@ -150,7 +150,7 @@
                     </div>
                     <div class="ml-auto mt-2 mx-0 px-5">
                         <!-- Edit Icon -->
-                        <a href="#"  class=" btn btn-outline-primary text-primary mx-2 py-0">
+                        <a href="#" class=" btn btn-outline-primary text-primary mx-2 py-0">
                             <i class="fas fa-pencil-alt"></i>
                         </a>
                         <!-- Delete Icon -->
@@ -166,7 +166,7 @@
             <div class="card mb-0 border-0">
                 <div class="card-header bg-white px-5" data-toggle="collapse" data-target="#contactDetails1">
                     <h5 class="card-title my-0">John Doe</h5>
-                    
+
                 </div>
                 <div id="contactDetails1" class="collapse px-5">
                     <div class="card-body py-0">
@@ -186,9 +186,60 @@
                     </div>
                 </div>
             </div>
+
             <!-- </div> -->
 
+
             <!-- Add more contact cards as needed -->
+
+
+
+            <div class="card mb-0 border-0">
+                <div class="card-header bg-white px-5">
+                    <h5 class="card-title my-0">John Doe</h5>
+                </div>
+                <div id="contactDetailsedit" class="px-2 px-md-5">
+                    <div class="card-body py-0">
+                        <form id="contactForm">
+                            <div class="row my-0">
+                                <label for="editContactName" class="col-md-1 col-form-label py-0 text-nowrap">Name:</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="editContactName" name="name" placeholder="Name" value="John Doe">
+                                </div>
+                            </div>
+                            <div class="row my-0">
+                                <label for="editContactEmail" class="col-md-1 col-form-label py-0 text-nowrap">Email:</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="editContactEmail" name="email" placeholder="Email" value="john.doe@example.com">
+                                </div>
+                            </div>
+                            <div class="row my-0">
+                                <label for="editContactPhone" class="col-md-1 col-form-label py-0 text-nowrap">Phone:</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="editContactPhone" name="phone" placeholder="Phone" value="(123) 456-7890">
+                                </div>
+                            </div>
+                            <div class="row my-0">
+                                <label for="editContactAddress" class="col-md-1 col-form-label py-0 text-nowrap">Address:</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="editContactAddress" name="address" placeholder="Address" value="123 Main St, City, State">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="ml-auto mt-2 mx-0 px-2 px-md-5">
+                        <!-- Save Icon -->
+                        <a href="#" class="btn btn-outline-primary text-primary mx-2 py-0" onclick="saveContact()">
+                            Save
+                        </a>
+                        <!-- Cancel Icon -->
+                        <a href="#" class="btn btn-outline-danger text-danger mx-5 py-0" onclick="cancelEdit()">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
 
 
         </div>
@@ -197,9 +248,9 @@
 
 
 
-    
-    
-    
+
+
+
 
 
 
@@ -212,7 +263,7 @@
 
     <!-- Your JavaScript code here -->
     <script src="resources/data/loadData.js"></script>
-    <script src="resources/javascript/main.js"></script>
+    <!-- <script src="resources/javascript/main.js"></script> -->
 </body>
 
 </html>
