@@ -391,6 +391,12 @@ const sortedData = [
         phone: "100",
         address: "555  Village, State",
     },
+    {
+        name: "+121212",
+        email: "121212@example.com",
+        phone: "121212121212",
+        address: "12 Village, State",
+    }
 
 ];
 
