@@ -414,6 +414,3 @@ const sortedData = data.sort((a, b) => {
 });
 localStorage.setItem("data",JSON.stringify(sortedData));
 
-
-// console.log(sortedData);
-// localStorage.setItem("data", JSON.stringify(sortedData));
