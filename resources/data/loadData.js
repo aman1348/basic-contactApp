@@ -1,6 +1,6 @@
 
 
-const sortedData = [
+const data = [
     {
         name: "Abigail Austin",
         email: "abigail.austin@example.com",
@@ -400,20 +400,20 @@ const sortedData = [
 
 ];
 
+const sortedData = data.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+
+    if (nameA < nameB) {
+        return -1;
+    }
+    if (nameA > nameB) {
+        return 1;
+    }
+    return 0;
+});
 localStorage.setItem("data",JSON.stringify(sortedData));
 
-// const sortedData = data.sort((a, b) => {
-//     const nameA = a.name.toLowerCase();
-//     const nameB = b.name.toLowerCase();
-
-//     if (nameA < nameB) {
-//         return -1;
-//     }
-//     if (nameA > nameB) {
-//         return 1;
-//     }
-//     return 0;
-// });
 
 // console.log(sortedData);
 // localStorage.setItem("data", JSON.stringify(sortedData));

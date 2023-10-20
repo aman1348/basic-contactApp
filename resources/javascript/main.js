@@ -1,4 +1,5 @@
 const contacts = document.getElementById("contacts");
+const app = document.getElementById("app");
 
 // getter and setter local storage data
 
@@ -7,14 +8,21 @@ let getData = () => {
 }
 
 let saveNewData = (data) => {
+    data = data.sort((a, b) => {
+        const nameA = a.name.toLowerCase();
+        const nameB = b.name.toLowerCase();
+
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
     localStorage.setItem("data", JSON.stringify(data));
 }
 
-let setData = (index, contact) => {
-    let data = JSON.parse(localStorage.getItem("data"));
-    data[index] = contact;
-    localStorage.setItem("data", JSON.stringify(data));
-}
 
 
 // create single contact html
@@ -32,11 +40,11 @@ let createContact = function (data, id) {
         </div>
         <div class="ml-auto mt-2 mx-0 px-5">
             <!-- Edit Icon -->
-            <a href="#" id="edit${id}" onclick="editContact(this)" class=" btn btn-outline-primary text-primary mx-2 py-0">
+            <a id="edit${id}" onclick="editContact(this)" class=" btn btn-outline-primary text-primary mx-2 py-0">
                 <i class="fas fa-pencil-alt"></i>
             </a>
             <!-- Delete Icon -->
-            <a href="#"  id="del${id}" onclick="deleteContact(this)" class="btn btn-outline-danger text-danger mx-5 py-0">
+            <a id="del${id}" onclick="deleteContact(this)" class="btn btn-outline-danger text-danger mx-5 py-0">
                 <i class="fas fa-trash-alt"></i>
             </a>
         </div>
@@ -60,15 +68,7 @@ let renderData = function (data) {
     let currentChar = "";
     let renderData = "";
     Data.forEach((element, index) => {
-        if (currentChar === "") {
-            currentChar = getfirstchar(data[index].name);
-            renderData += `
-            <div class="card-header bg-white m-0 py-0" id="header${currentChar}">
-            <h3 class="card-title my-0 ">${currentChar} </h3>
-            </div>
-            `;
-        }
-        else if (/^\d$/.test(getfirstchar(data[index].name))) {
+        if (/^\d$/.test(getfirstchar(data[index].name))) {
             if (currentChar != "0-9") {
                 currentChar = "0-9";
                 renderData += `
@@ -90,7 +90,7 @@ let renderData = function (data) {
             }
 
         }
-        else{
+        else {
             if ("#" != currentChar) {
                 currentChar = "#";
                 renderData += `
@@ -113,11 +113,10 @@ let renderData = function (data) {
 let deleteContact = (e) => {
     let index = e.id.substring(3);
     let data = getData();
-    data.splice(index,1);
+    data.splice(index, 1);
     console.log(data)
     saveNewData(data);
-    // e.parentElement.parentElement.parentElement.remove();
-    contacts.innerHTML = renderData(getData());
+    app.innerHTML = renderPageNavigation() + renderData(getData());
 
 }
 
@@ -126,7 +125,7 @@ let deleteContact = (e) => {
 let editContact = (e) => {
     let index = e.id.substring(4);
     let contact = getData()[parseInt(index)];
-
+    console.log(e.parentElement.parentElement.parentElement);
     e.parentElement.parentElement.parentElement.innerHTML = `
     <div class="card-header bg-white px-5">
     <h5 class="card-title my-0">${contact.name}</h5>
@@ -176,7 +175,6 @@ let editContact = (e) => {
 
 // save edit
 let saveContact = (e) => {
-    // console.log(e.parentElement.parentElement.id.substring(18));
     let index = parseInt(e.parentElement.parentElement.id.substring(18));
     let contact = e.parentElement.parentElement.firstElementChild.firstElementChild;
 
@@ -187,10 +185,11 @@ let saveContact = (e) => {
         address: contact.address.value,
     };
 
-
-    setData(index,savingData);
-    console.log(getData()[index]);
-    contacts.innerHTML = renderData(getData());
+    let data = getData();
+    data.splice(index, 1);
+    data.push(savingData);
+    saveNewData(data);
+    app.innerHTML = renderPageNavigation() + renderData(getData());
 
 }
 
@@ -224,4 +223,114 @@ let cancelEdit = (e) => {
     `;
 }
 
-contacts.innerHTML = renderData(getData());
+//  Page Navigation
+
+let renderPageNavigation = () => {
+    let navData = "";
+    for (let letter = 'A'.charCodeAt(0); letter <= 'Z'.charCodeAt(0); letter++) {
+        navData += `<a class="btn btn-outline-secondary" href="#header${String.fromCharCode(letter)}">${String.fromCharCode(letter)}</a>`;
+    }
+
+    let nav = `
+    <div class="btn-toolbar mb-3 row --bs-light-bg-subtle d-flex justify-content-center" role="toolbar"
+            aria-label="Toolbar with button groups">
+            <div class="btn-group d-flex flex-wrap my-auto col-md-10 " role="group" aria-label="First group">
+                <a class="btn btn-outline-secondary" href="#header#">#</a>
+                <a class="btn btn-outline-secondary" href="#header0-9">0-9</a>  
+                ${navData}              
+            </div>
+        </div>
+    `;
+    return nav;
+}
+
+
+
+// ADD NEW CONTACT
+
+let addNewContact = () => {
+    app.innerHTML = `
+    <div class="container">
+            <h2 class="text-center">Add Contact</h2>
+            <form onsubmit="handleSubmit(this)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter your address">
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary mb-5">Submit</button>
+                </div>
+            </form>
+        </div>
+    `;
+}
+
+let handleSubmit = (e) => {
+
+    let newContact = {
+        name: e.name.value,
+        email: e.email.value,
+        phone: e.phone.value,
+        address: e.address.value,
+    };
+    if(!(/^[0-9]+$/.test(newContact.phone)))
+    {
+        alert("invalid phone number");
+    }else{
+        let data = getData();
+        data.push(newContact);
+        saveNewData(data);
+        app.innerHTML = renderPageNavigation() + renderData(getData());
+    }
+
+
+}
+
+
+// home button ( show all contacts )
+let renderContacts = () => {
+    app.innerHTML = `
+    <div class="row">
+        <div class="col-md-12" id="contacts">
+            <!-- all contacts -->
+            ${renderPageNavigation()}
+            ${renderData(getData())}
+        </div>
+    </div>
+    `;    
+}
+
+// Search
+function search() {
+    let data = getData();
+    var searchInput = document.getElementById('searchInput').value.toLowerCase();
+    var results = document.getElementById('app');
+    results.innerHTML = ''; 
+
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].name.toLowerCase().includes(searchInput)) {
+            results.innerHTML+=`${createContact(data[i],i)}`;
+        }
+    }
+
+    if (results.innerHTML=="") {
+        results.innerHTML = `<div class="alert alert-danger" role="alert">No Results Found</div>`;
+    }
+}
+
+
+
+
+contacts.innerHTML = renderPageNavigation() + renderData(getData());

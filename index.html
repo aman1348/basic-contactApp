@@ -26,42 +26,27 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="btn text-light" aria-current="page" onclick="renderContacts()">Home</a>
+                </li>
                 <li>
                     <div class="input-group search-box">
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Search for...">
+                        <input id="searchInput" type="text" class="form-control" placeholder="Search" aria-label="Search for...">
                         <span class="input-group-btn">
-                            <button class="btn btn-secondary" type="button"><i class="ion-search"></i></button>
+                            <button class="btn btn-secondary" type="button" onclick="search()"><i class="ion-search"></i></button>
                         </span>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
+
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
-                </li>
+                </li> -->
             </ul>
-            <!-- <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-            </ul> -->
         </div>
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" id="addContactBtn" href="#">Add Contact</a>
+                <a class="btn text-light" id="addContactBtn" onclick="addNewContact()">Add Contact</a>
             </li>
         </ul>
     </nav>
@@ -73,187 +58,19 @@
 
 
 
-    <!-- Content Area -->
 
     <!-- navigation buttons -->
 
 
-
-
-    <!-- col-md-12 -->
-    <div class="btn-toolbar mb-3 row --bs-light-bg-subtle d-flex justify-content-center" role="toolbar"
-        aria-label="Toolbar with button groups">
-        <div class="btn-group d-flex flex-wrap my-auto col-md-10 " role="group" aria-label="First group">
-            <a class="btn btn-outline-secondary" href="#headerA">A</a>
-            <a class="btn btn-outline-secondary" href="#headerB">B</a>
-            <a class="btn btn-outline-secondary" href="#headerC">C</a>
-            <a class="btn btn-outline-secondary" href="#headerD">D</a>
-            <a class="btn btn-outline-secondary">E</a>
-            <a class="btn btn-outline-secondary">F</a>
-            <a class="btn btn-outline-secondary">G</a>
-            <a class="btn btn-outline-secondary">H</a>
-            <a class="btn btn-outline-secondary">I</a>
-            <a class="btn btn-outline-secondary" href="#headerJ">J</a>
-            <a class="btn btn-outline-secondary">K</a>
-            <a class="btn btn-outline-secondary">L</a>
-            <a class="btn btn-outline-secondary">M</a>
-            <a class="btn btn-outline-secondary">N</a>
-            <a class="btn btn-outline-secondary">O</a>
-            <a class="btn btn-outline-secondary">P</a>
-            <a class="btn btn-outline-secondary">Q</a>
-            <a class="btn btn-outline-secondary">R</a>
-            <a class="btn btn-outline-secondary">S</a>
-            <a class="btn btn-outline-secondary">T</a>
-            <a class="btn btn-outline-secondary">U</a>
-            <a class="btn btn-outline-secondary">V</a>
-            <a class="btn btn-outline-secondary">W</a>
-            <a class="btn btn-outline-secondary">X</a>
-            <a class="btn btn-outline-secondary">Y</a>
-            <a class="btn btn-outline-secondary">Z</a>
-            <a class="btn btn-outline-secondary">0-9</a>
-            <a class="btn btn-outline-secondary">#</a>
+    <div id="app">
+        <!-- contacts -->
+        <div class="row">
+            <div class="col-md-12" id="contacts">
+                <!-- all contacts -->
+            </div>
         </div>
 
-
     </div>
-
-
-    <!-- navigation buttons end -->
-    <!-- <div class="container"> -->
-
-
-    <!-- contacts -->
-
-
-    <div class="row">
-        <div class="col-md-12" id="contacts">
-            <!-- start -->
-
-            <div class="card-header bg-white m-0 py-0">
-                <h3 class="card-title my-0 ">J </h3>
-            </div>
-
-
-
-            <!-- end -->
-
-            <div class="card mb-0 border-0">
-                <div class="card-header bg-white px-5" data-toggle="collapse" data-target="#contactDetails0">
-                    <h5 class="card-title my-0">John Doe</h5>
-
-                </div>
-                <div id="contactDetails0" class="collapse px-5">
-                    <div class="card-body py-0">
-                        <p class="card-text">Email: john.doe@example.com</p>
-                        <p class="card-text">Phone: (123) 456-7890</p>
-                        <p class="card-text">Address: 123 Main St, City, State</p>
-                    </div>
-                    <div class="ml-auto mt-2 mx-0 px-5">
-                        <!-- Edit Icon -->
-                        <a href="#" class=" btn btn-outline-primary text-primary mx-2 py-0">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
-                        <!-- Delete Icon -->
-                        <a href="#" class="btn btn-outline-danger text-danger mx-5 py-0">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="card mb-0 border-0">
-                <div class="card-header bg-white px-5" data-toggle="collapse" data-target="#contactDetails1">
-                    <h5 class="card-title my-0">John Doe</h5>
-
-                </div>
-                <div id="contactDetails1" class="collapse px-5">
-                    <div class="card-body py-0">
-                        <p class="card-text">Email: john.doe@example.com</p>
-                        <p class="card-text">Phone: (123) 456-7890</p>
-                        <p class="card-text">Address: 123 Main St, City, State</p>
-                    </div>
-                    <div class="ml-auto mt-2 mx-0 px-5">
-                        <!-- Edit Icon -->
-                        <a href="#" class=" btn btn-outline-primary text-primary mx-2 py-0">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
-                        <!-- Delete Icon -->
-                        <a href="#" class="btn btn-outline-danger text-danger mx-5 py-0">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- </div> -->
-
-
-            <!-- Add more contact cards as needed -->
-
-
-
-            <div class="card mb-0 border-0">
-                <div class="card-header bg-white px-5">
-                    <h5 class="card-title my-0">John Doe</h5>
-                </div>
-                <div id="contactDetailsedit" class="px-2 px-md-5">
-                    <div class="card-body py-0">
-                        <form id="contactForm">
-                            <div class="row my-0">
-                                <label for="editContactName" class="col-md-1 col-form-label py-0 text-nowrap">Name:</label>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="editContactName" name="name" placeholder="Name" value="John Doe">
-                                </div>
-                            </div>
-                            <div class="row my-0">
-                                <label for="editContactEmail" class="col-md-1 col-form-label py-0 text-nowrap">Email:</label>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="editContactEmail" name="email" placeholder="Email" value="john.doe@example.com">
-                                </div>
-                            </div>
-                            <div class="row my-0">
-                                <label for="editContactPhone" class="col-md-1 col-form-label py-0 text-nowrap">Phone:</label>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="editContactPhone" name="phone" placeholder="Phone" value="(123) 456-7890">
-                                </div>
-                            </div>
-                            <div class="row my-0">
-                                <label for="editContactAddress" class="col-md-1 col-form-label py-0 text-nowrap">Address:</label>
-                                <div class="col-md-11">
-                                    <input type="text" class="form-control" id="editContactAddress" name="address" placeholder="Address" value="123 Main St, City, State">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="ml-auto mt-2 mx-0 px-2 px-md-5">
-                        <!-- Save Icon -->
-                        <a href="#" class="btn btn-outline-primary text-primary mx-2 py-0" onclick="saveContact()">
-                            Save
-                        </a>
-                        <!-- Cancel Icon -->
-                        <a href="#" class="btn btn-outline-danger text-danger mx-5 py-0" onclick="cancelEdit()">
-                            Cancel
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-
-
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- Include Bootstrap JS and jQuery -->
